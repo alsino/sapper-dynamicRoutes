@@ -9,8 +9,7 @@
 import { onMount } from 'svelte';
 
 onMount(async () => {
-	
-	console.log($cars);
+	// console.log($cars);
 });
 
 
@@ -65,7 +64,7 @@ onMount(async () => {
 
 <nav>
 	<ul>
-		<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.'>home</a></li>
+		<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.'>Overview</a></li>
 
 		{#each $cars as car}
 			 <li><a aria-current='{segment === car.name ? "page" : undefined}' href={car.name}>{car.name}</a></li>

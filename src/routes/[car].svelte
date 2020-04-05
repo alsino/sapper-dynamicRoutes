@@ -8,6 +8,8 @@
 <script>
   import { beforeUpdate } from 'svelte';
   import { cars }  from "../store/index.js";
+  // import { Back }  from "../components/Back.svelte";
+  
   export let car;
 
   let carDescription;
@@ -35,10 +37,14 @@ img {
 	<title>{car}</title>
 </svelte:head>
 
-
+<!-- <Back/> -->
 <h1>{car}</h1>
 <p>{carDescription}</p>
 <img src="{carThumb}" alt="{carDescription}">
+
+<br>
+<br>
+<div><a href='.'>Back</a></div>
 
 
 

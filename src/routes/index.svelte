@@ -1,15 +1,17 @@
 <script>
 
 import { onMount } from 'svelte';
+import { cars } from '../store/index.js';
+
+export let segment;
 
 
-let photos = [];
 
 onMount(async () => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`);
-	photos = await res.json();
-	console.log(photos);
+	
 });
+
+
 
 </script>
 
@@ -26,6 +28,10 @@ img {
 	width: 200px;
 }
 
+ul {
+	list-style: none;
+}
+
 
 
 </style>
@@ -37,9 +43,17 @@ img {
 </svelte:head>
 
 <div class="wrapper">
-	{#each photos as pic}
-		<img src="{pic.url}" alt="{pic.title}">
-	{/each}
+
+<ul>
+<!-- {#each $cars as car}
+	 <li>{car.name}</li>
+{/each} -->
+
+{#each $cars as car}
+	<li><a aria-current='{segment === car.name ? "page" : undefined}' href={car.name}>{car.name}</a></li>
+{/each}
+</ul>
+
 </div>
 
 
